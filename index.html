@@ -103,8 +103,8 @@
             <div class="row">
                 <div class="col-lg-12 text-left">
                     <p class="lead">I am Kevin Delgado, currently a sophomore at Duke University double majoring in Electrical & Computer Engineering and Computer Science. Growing up on Florida's Space Coast I consider myself incredibly fortunate to have been surrounded by and mentored by the incredible engineers that have made human spaceflight a reality. This has led to a lifelong passion for pushing the limits of engineering. In high school this resulted in me becoming an active member of my robotics team, FRC Team 233 "The Pink Team". Now in college, this passion continues as I have taken a great interest in solving problems through software.</p>
-                    <p class="lead">Outside of my studies, I am proud to call myself a Cameron Crazie and a fan of all that is related to Duke Athletics. Additionally since founding the Cocoa Beach High School Ultimate Club in tenth grade I have become an avid Ultimate Frisbee player, currently playing for Duke Brimstone. </p>
-                    <p class="lead">Currently, I am looking for internship opportunites in the field of software development for the Summer of 2015. Feel free to <a href="#">contact me</a> if you think I would be a good fit.</p>
+                    <p class="lead">Outside of my studies, I am proud to call myself a Cameron Crazie and a fan of all that is related to Duke Athletics. Additionally, since founding the Cocoa Beach High School Ultimate Club in tenth grade I have become an avid Ultimate Frisbee player, currently playing for Duke Brimstone. </p>
+                    <p class="lead">Right now, I am looking for internship opportunites in the field of software development for the Summer of 2015. Feel free to check out some of my <a href="#projects">projects</a> and  <a href="#contact">contact me</a> if you think I would be a good fit.</p>
                 </div>
             </div>
             <!-- /.row -->
@@ -300,7 +300,7 @@
                         <div class="col-md-6">
                             <div class="projects-item">
                                 <a href="#">
-                                    <img class="img-portfolio img-responsive" src="img/portfolio-1.jpg">
+                                    <img class="img-portfolio img-responsive" alt="side project" src="img/portfolio-1.jpg">
                                 </a>
                             </div>
                         </div>
@@ -363,39 +363,41 @@
 -->
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Feel free to drop me a line!</strong>
-                    </h4>
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 text-center">
+                        <h4><strong>Feel free to drop me a line!</strong>
+                        </h4>
                     <!--
                     <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
                 -->
-                    <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (321) 759-7405</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:delgado1kevin@gmail.com">delgado1kevin@gmail.com</a>
-                        </li>
-                    </ul>
-                    <br>
-                    <ul class="list-inline">
-                        <li>
-                            <a href="http://www.linkedin.com/pub/kevin-delgado/86/b34/6ba/"><i class="fa fa-linkedin fa-fw fa-3x"> </i></a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/kevindelgado"><i class="fa fa-github fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/108067101673003584093/posts/p/pub"><i class="fa fa-google-plus fa-fw fa-3x"></i></a>
-                        </li>
-                        <li>
-                            <a href="skype:delgado1kevin1?call"><i class="fa fa-skype fa-fw fa-3x"></i></a>
-                        </li>
-                    </ul>
-                    <hr class="small">
-                    <p class="text-muted">Copyright &copy; Kevin Delgado 2015</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-phone fa-fw"></i> (321) 759-7405</li>
+                            <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:delgado1kevin@gmail.com">delgado1kevin@gmail.com</a>
+                            </li>
+                        </ul>
+                        <br>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="http://www.linkedin.com/pub/kevin-delgado/86/b34/6ba/"><i class="fa fa-linkedin fa-fw fa-3x"> </i></a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/kevindelgado"><i class="fa fa-github fa-fw fa-3x"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/108067101673003584093/posts/p/pub"><i class="fa fa-google-plus fa-fw fa-3x"></i></a>
+                            </li>
+                            <li>
+                                <a href="skype:delgado1kevin1?call"><i class="fa fa-skype fa-fw fa-3x"></i></a>
+                            </li>
+                        </ul>
+                        <hr class="small">
+                        <p class="text-muted">Copyright &copy; Kevin Delgado 2015</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </footer>
 
     <!-- jQuery -->
@@ -449,6 +451,19 @@
             }
         });
     });
+
+    //
+    var sourceSwap = function () {
+    var $this = $(this);
+    var newSource = $this.data('img/portfolio-3.jpg');
+    $this.data('img/portfolio-3.jpg', $this.attr('img/portfolio-1.jpg'));
+    $this.attr('img/portfolio-1.jpg', newSource);
+    }
+
+    $(function () {
+        $('img.img-portfolio').hover(sourceSwap, sourceSwap);
+    });
+
     </script>
 
 </body>
